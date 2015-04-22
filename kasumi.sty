@@ -1,0 +1,44 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{kasumi}
+
+\usepackage{fancyhdr} % Custom headers
+\usepackage{graphicx} % Image insertion
+\usepackage{color} % Custom defined colors
+\usepackage[hidelinks]{hyperref} % Hotlinks for chapters, figures, listings, and so on
+\usepackage{minted} % Display code with syntax highlighting (requires python and Pygments; must be compiled with -shell-escape option)
+
+% Configure page margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+% Set up the header and footer variables
+\newcommand{\headerLeft}{}
+\newcommand{\headerMiddle}{}
+\newcommand{\headerRight}{}
+\newcommand{\footerLeft}{}
+\newcommand{\footerMiddle}{}
+\newcommand{\footerRight}{}
+% Configure the actual header and footer data
+\pagestyle{fancy}
+\lhead{\headerLeft} % Top left header
+\chead{\headerMiddle} % Top center head
+\rhead{\headerRight} % Top right header
+\lfoot{\footerLeft} % Bottom left footer
+\cfoot{\footerMiddle} % Bottom center footer
+\rfoot{\footerRight} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+% Function for inserting Java code listings
+\definecolor{JavaCodeBg}{rgb}{0.15, 0.16, 0.13}
+\newcommand{\javacode}[3]{
+	\begin{listing}[H]
+		\inputminted[linenos=true, style=monokai, tabsize=2, bgcolor=JavaCodeBg, fontsize=\scriptsize]{java}{#1}
+		\caption{#2}
+		\label{#3}
+	\end{listing}
+}

@@ -1,0 +1,50 @@
+\section{Chapter 1}
+
+Sed convallis mattis ullamcorper. Donec felis nisl, tincidunt sed suscipit pellentesque, eleifend non elit. Nunc vel justo fermentum lorem aliquet rhoncus eu non nisl. Praesent sed nisl vitae velit porta tristique bibendum in tellus. Phasellus quis eros sed sem ultricies feugiat sit amet in mauris. Aliquam non augue pharetra, viverra ligula vel, euismod neque. Nullam leo orci, placerat aliquet iaculis vitae, feugiat ut purus.
+
+\subsection{Begin and End}
+The \verb;\textit{begin}; command, always paired with a matching \verb;\textit{end}; command, define environments within which something is defined.  For instance, figured, mathematics, lists, quotes, and many, many more things.
+
+\subsection{Useful Special Characters}
+A lot of the time, special characters are reserved, and must be escaped using the \textbackslash.  For instance, to print a pound sign, \verb;\#; must be entered, resulting in \#.  Since the backslash itself is a reserved character, it must be entered using \verb;\textbackslash;.
+
+Mathematic blocks, usually defined using \verb;\begin{math}; and \verb;\end{math};, can be written as shorthand using \verb;\(; and \verb;\); respectively.
+
+Printing single and double dots over the top of characters can be done using the \verb;\.; and \verb;\"; commands respectively, followed by the character to apply them to.  For instance, \.A, \"A.
+
+Termination of a line can be expressed with \verb;\\;.  If a pagebreak when terminating a line is not desired, \verb;\\*; can instead be used.
+
+\subsection{Lists}
+Numbered lists can be created using the \textit{enumerate} environment.
+\begin{enumerate}
+	\item first
+	\item second
+\end{enumerate}
+Bulleted lists can be created using the \textit{itemize} environment
+\begin{itemize}
+	\item first
+	\item second
+\end{itemize}
+
+
+\subsection{Figures and Images}
+Figures can be added using the \textit{figure} environment.  The argument to this environment is the positioning flag.
+
+Captions can be added to figured using the \textit{caption} command, with the content to display as the parameter.
+
+Figured can be centered by preceding contents of the figure with the \verb;\centering; command.
+
+Labels can also be added to figures to use them as reference anchors using the \verb;label; command with the label as the parameter.
+
+A very common use for figures is images.  Images can be inserted using the \verb;\includegraphics; command with the relative filename as the parameter.  There are many options available, but a common setting is the width of the image, which uniformly scales it based on a given value.  For instance, \verb;width=0.8\textwidth;.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{cat.jpg}
+	\caption{A beautiful cat.}
+	\label{fig:beautiful_cat}
+\end{figure}
+
+\subsection{Referencing and Citing}
+References can be added to existing figures, captions, and so on, using \verb;\cite{name};, where \textit{name} is the name of the item you are referencing.  For instance, look at the beautiful cat listed in \textit{Figure \ref{fig:beautiful_cat}}.
+
+Citing a reference is syntactically similar to references.  Cites are added using \verb;\cite{name};, where \textit{name} is the name of the citation defined in the bibliography style.  It is safer, however, to instead use \verb;\autocite{name};, as it handles more corner cases for you.  For instance, patterns in software development were pioneered by \autocite{gamma1994design}.

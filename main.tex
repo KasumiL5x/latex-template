@@ -1,0 +1,63 @@
+\documentclass[12pt, pdftex]{article}
+
+% My own style package
+\usepackage{kasumi}
+
+% Fix headheight for FancyHDR based on the 12pt size above (pdflatex output tells you what size to use).
+\setlength{\headheight}{15pt}
+
+% Biblatex package and Harvard referencing style
+\usepackage[style=authoryear-ibid,backend=biber]{biblatex}
+\bibliography{refs.bib}
+
+\usepackage[toc,page]{appendix}
+
+\title{
+	\vspace{2in}
+	\textmd{\textbf{Heading 1}}\\
+	\normalsize\vspace{0.1in}\small{Heading 2}\\
+	\vspace{0.1in}
+	\large{\textit{Heading 3}}\\
+	\vspace{3in}
+}
+\author{Daniel Green}
+
+% Set up header and footer data
+\renewcommand{\headerLeft}{Daniel Green}
+\renewcommand{\headerMiddle}{Title}
+\renewcommand{\headerRight}{}
+\renewcommand{\footerLeft}{}
+\renewcommand{\footerMiddle}{}
+\renewcommand{\footerRight}{\thepage}
+
+\begin{document}
+\maketitle
+\clearpage
+
+\tableofcontents
+\clearpage
+
+
+\input{introduction}
+\clearpage
+
+\input{chapter1}
+\clearpage
+
+\input{chapter2}
+\clearpage
+
+\input{chapter3}
+\clearpage
+
+\input{conclusion}
+\clearpage
+
+\begin{appendices}
+\input{appendices}
+\end{appendices}
+
+\newpage
+\printbibliography
+
+\end{document}
