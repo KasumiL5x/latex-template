@@ -6,9 +6,9 @@
 % Fix headheight for FancyHDR based on the 12pt size above (pdflatex output tells you what size to use).
 \setlength{\headheight}{15pt}
 
-% Biblatex package and Harvard referencing style
-\usepackage[style=authoryear-ibid,backend=biber]{biblatex}
-\bibliography{refs.bib}
+% Use natbib and apalike for Harvard style references.
+\usepackage[round]{natbib}
+\bibliographystyle{apalike}
 
 \usepackage[toc,page]{appendix}
 
@@ -58,6 +58,6 @@
 \end{appendices}
 
 \newpage
-\printbibliography
+\bibliography{refs}
 
 \end{document}
