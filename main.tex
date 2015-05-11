@@ -6,28 +6,6 @@
 % Fix headheight for FancyHDR based on the 12pt size above (pdflatex output tells you what size to use).
 \setlength{\headheight}{15pt}
 
-% Use apacite for APA style (basically Harvard) references.
-\usepackage[]{apacite}
-\usepackage[]{apacdoc}
-\bibliographystyle{apacite}
-
-% Use array in conjunction with booktabs for wrapping columns and whatnot.
-\usepackage{array}
-% Use booktabs for table enhancements.
-\usepackage{booktabs}
-
-\usepackage[toc,page]{appendix}
-
-\title{
-	\vspace{2in}
-	\textmd{\textbf{Heading 1}}\\
-	\normalsize\vspace{0.1in}\small{Heading 2}\\
-	\vspace{0.1in}
-	\large{\textit{Heading 3}}\\
-	\vspace{3in}
-}
-\author{Daniel Green}
-
 % Set up header and footer data
 \renewcommand{\headerLeft}{Daniel Green}
 \renewcommand{\headerMiddle}{Title}
@@ -37,12 +15,10 @@
 \renewcommand{\footerRight}{\thepage}
 
 \begin{document}
-\maketitle
-\clearpage
 
+\input{titlepage}
 \tableofcontents
 \clearpage
-
 
 \input{introduction}
 \clearpage

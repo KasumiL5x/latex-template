@@ -1,11 +1,43 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{kasumi}
 
-\usepackage{fancyhdr} % Custom headers
-\usepackage{graphicx} % Image insertion
-\usepackage{color} % Custom defined colors
-\usepackage[hidelinks]{hyperref} % Hotlinks for chapters, figures, listings, and so on
-\usepackage{minted} % Display code with syntax highlighting (requires python and Pygments; must be compiled with -shell-escape option)
+% LaTeX2e bug fixes
+\RequirePackage{fixltx2e}
+
+% Improves floating objects
+\RequirePackage{float}
+
+% Custom headers
+\RequirePackage{fancyhdr} 
+
+% Graphic insertion
+\RequirePackage{graphicx}
+
+% Custom colors
+\RequirePackage{xcolor}
+
+% Nice looking algorithms
+\RequirePackage[ruled]{algorithm2e}
+
+% Hotlinks (with boxes disabled by default)
+\RequirePackage[hidelinks]{hyperref}
+
+% Display code w/ syntax highlighting (requires Python and Pygments; must be compiled with -shell-escape)
+\RequirePackage{minted}
+
+% Use apacite for APA style references
+\RequirePackage{apacite}
+\RequirePackage{apacdoc}
+\bibliographystyle{apacite}
+% Define doiprefix to be blank because of a bug w/ apacite
+\def\doiprefix{}
+
+% Appendix formatting
+\RequirePackage[toc,page]{appendix}
+
+% booktabs for improved tables and array for wrapping columns
+\RequirePackage{array}
+\RequirePackage{booktabs}
 
 % Configure page margins
 \topmargin=-0.45in
@@ -34,6 +66,9 @@
 \renewcommand\footrulewidth{0.4pt} % Size of the footer rule
 
 % Function for inserting Java code listings
+%   [1] file to include relative to latex working directory
+%   [2] caption displayed below code
+%   [3] label for referencing
 \definecolor{JavaCodeBg}{rgb}{0.15, 0.16, 0.13}
 \newcommand{\javacode}[3]{
 	\begin{listing}[H]
