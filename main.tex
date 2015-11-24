@@ -1,7 +1,7 @@
 \documentclass[12pt, pdftex]{article}
 
 % My own style package
-\usepackage{kasumi}
+\usepackage{style/kasumi}
 
 % Fix headheight for FancyHDR based on the 12pt size above (pdflatex output tells you what size to use).
 \setlength{\headheight}{15pt}
@@ -16,30 +16,30 @@
 
 \begin{document}
 
-\input{titlepage}
+\input{sections/titlepage}
 \tableofcontents
 \clearpage
 
-\input{introduction}
+\input{sections/introduction}
 \clearpage
 
-\input{chapter1}
+\input{sections/chapter1}
 \clearpage
 
-\input{chapter2}
+\input{sections/chapter2}
 \clearpage
 
-\input{chapter3}
+\input{sections/chapter3}
 \clearpage
 
-\input{conclusion}
+\input{sections/conclusion}
 \clearpage
 
 \begin{appendices}
-\input{appendices}
+\input{sections/appendices}
 \end{appendices}
 
 \newpage
-\bibliography{refs}
+\bibliography{refs/refs}
 
 \end{document}

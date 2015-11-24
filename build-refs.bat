@@ -1,1 +1,1 @@
-bibtex main
+bibtex tmp/main
