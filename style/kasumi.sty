@@ -47,15 +47,18 @@
 \textheight=9.0in
 \headsep=0.25in
 
+% Set page style
+\pagestyle{fancy}
+% Redefine sectionmark such that \rightmark will print the current section as text.  This must be done after setting the page style.
+\renewcommand{\sectionmark}[1]{\markright{#1}}
 % Set up the header and footer variables
 \newcommand{\headerLeft}{}
-\newcommand{\headerMiddle}{}
+\newcommand{\headerMiddle}{\rightmark}
 \newcommand{\headerRight}{}
 \newcommand{\footerLeft}{}
 \newcommand{\footerMiddle}{}
-\newcommand{\footerRight}{}
+\newcommand{\footerRight}{\thepage}
 % Configure the actual header and footer data
-\pagestyle{fancy}
 \lhead{\headerLeft} % Top left header
 \chead{\headerMiddle} % Top center head
 \rhead{\headerRight} % Top right header
