@@ -22,6 +22,12 @@
 % Hotlinks (with boxes disabled by default)
 \RequirePackage[hidelinks]{hyperref}
 
+% Allows alignment within elements such as \includegraphics
+\usepackage[export]{adjustbox}
+
+% Sometimes want to wrap figures within text instead of breaking the flow (use wrapfigure instead of figure)
+\usepackage{wrapfig}
+
 % Display code w/ syntax highlighting (requires Python and Pygments; must be compiled with -shell-escape)
 \RequirePackage{minted}
 
@@ -38,6 +44,9 @@
 % booktabs for improved tables and array for wrapping columns
 \RequirePackage{array}
 \RequirePackage{booktabs}
+
+% enumitem for continuing enumerations with breaks between using [resume]
+\RequirePackage{enumitem}
 
 % Configure page margins
 \topmargin=-0.45in
